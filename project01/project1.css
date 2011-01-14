@@ -27,20 +27,37 @@ div.menuBar li{
 
 div.menuBar a:link,a:visited{
 	display:block;
-	width:120px;
+	width:4.5em;
 	text-align:center;
 	color:white;
 	padding:4px;
 	text-decoration:none;
 }
 
+/* Used as tooltips */
+div.menuBar span{
+	display:none;
+	margin-left:2em;
+	margin-top:0.5em;
+	width:8em;
+}
+
 div.menuBar a:hover{
 	background-color:#444444;
+}
+
+/* Used to make span appear as a tooltip on hover*/
+div.menuBar a:hover span{
+	display:block;
+	position:absolute;
+	background:#FFFFE1;
+	color:black;
 }
 
 div.main{
 	background-color:#FBFBFB;
 }	
+
 
 div.currentProgress{
 	background-color:#F0EEFE;
