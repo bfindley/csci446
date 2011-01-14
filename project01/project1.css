@@ -34,8 +34,12 @@ div.menuBar a:link,a:visited{
 	text-decoration:none;
 }
 
+div.menuBar a:hover{
+	background-color:#444444;
+}
+
 div.main{
-	background-color:
+	background-color:#FBFBFB;
 }	
 
 div.currentProgress{
