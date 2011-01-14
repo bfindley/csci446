@@ -2,6 +2,14 @@ body{
 	background-color:#A8A8A8;
 }
 
+div.banner{
+	background-color:#CACACA;
+}
+
+#title{
+	color:blue;
+}
+
 div.menuBar{
 	background-color:black;
 }
@@ -26,6 +34,15 @@ div.menuBar a:link,a:visited{
 	text-decoration:none;
 }
 
-#title{
-	color:blue;
+div.main{
+	background-color:
+}	
+
+div.currentProgress{
+	background-color:#F0EEFE;
+}
+
+#footer{
+	background-color:#EFEFEF;
+	text-align:center;
 }
