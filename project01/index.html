@@ -3,6 +3,14 @@
 <head> 
 <title>Life Figure-Outer Application</title>
 <link rel="stylesheet" type="text/css" href="project1.css" >
+
+<script type="text/javascript">
+	function checkFeeling(){
+		if(document.inputForm.feelingInput.value.length==0)
+			alert("Surely you feel something!");
+	}
+</script>
+
 </head>
 <body>
 	<div class="main">
@@ -14,27 +22,27 @@
 		<div class="menuBar">
 			<ul>
 					<li><a href="#Home">Home<span>TIP: There's no place like home.</span></a></li>
-					<li><a href="#Interests">Interests<span>TIP: Rate.</span</a></li>
-					<li><a href="#Health">Health<span>TIP: Could be worse.</span</a></li>
-					<li><a href="#Academics">Academic<span>TIP: Go Mines!</span</a></li>
-					<li><a href="#Professional">Professional<span>TIP: $$$</span</a></li>
-					<li><a href="#Fun">Fun<span>TIP: Isn't it?</span</a></li>
-					<li><a href="#Evil">Evil<span>TIP: MUHAHA!</span</a></li>
+					<li><a href="#Interests">Interests<span>TIP: Rate.</span></a></li>
+					<li><a href="#Health">Health<span>TIP: Could be worse.</span></a></li>
+					<li><a href="#Academics">Academic<span>TIP: Go Mines!</span></a></li>
+					<li><a href="#Professional">Professional<span>TIP: $$$</span></a></li>
+					<li><a href="#Fun">Fun<span>TIP: Isn't it?</span></a></li>
+					<li><a href="#Evil">Evil<span>TIP: MUHAHA!</span></a></li>
 			</ul>
 		</div> <!-- Ends menuBar -->
 		
 		<div class="userInput">
 			<h2>Lorem Ipsum Dolor Sit Amet.</h2>
-			<form>
+			<form name="inputForm">
 				<table>
 					<tr>
-						<td>How do you fell today?</td>
-					<td><input type="text"></td>
+						<td>How do you feel today?</td>
+					<td><input type="text" name="feelingInput"></td>
 					</tr>
 					<tr>
 						<td>How would you like to feel? (choose all that apply)</td>
 						<td>
-							<select size="4">
+							<select size="4" multiple="mulitple">
 								<option>Comfortably numb</option>
 								<option>Grumpy as poop, you jerk</option>
 								<option>Happy like I'm on controlled substances</option>
@@ -43,7 +51,7 @@
 						</td>
 					</tr>
 				</table>
-				<input id="button" type="submit" value="Feel me!">
+				<input id="button" type="button" value="Feel me!" onClick="checkFeeling()">
 			</form>
 		</div> <!-- Ends userInput -->
 			
