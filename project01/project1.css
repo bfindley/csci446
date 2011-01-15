@@ -1,6 +1,13 @@
 body{
 	background-color:#A8A8A8;
+	font-family:"Helvetica","sans-serif";
 }
+
+div.main{
+	background-color:#FBFBFB;
+	margin-left:3%;
+	margin-right:3%;
+}	
 
 div.banner{
 	background-color:#CACACA;
@@ -12,12 +19,13 @@ div.banner{
 
 div.menuBar{
 	background-color:black;
+	margin:0;
 }
 
 div.menuBar ul{
 	list-style-type:none;
 	margin:0;
-	padding:0;
+	margin-left:-40px; /*Not sure why I have to do this but it works*/
 	overflow:hidden;
 }
 
@@ -27,11 +35,11 @@ div.menuBar li{
 
 div.menuBar a:link,a:visited{
 	display:block;
-	width:4.5em;
 	text-align:center;
+	font-weight:bold;
 	color:white;
-	padding:4px;
 	text-decoration:none;
+	padding:.45em .85em .45em .85em;
 }
 
 /* Used as tooltips */
@@ -39,6 +47,7 @@ div.menuBar span{
 	display:none;
 	margin-left:2em;
 	margin-top:0.5em;
+	font-weight:normal;
 	width:8em;
 }
 
@@ -53,11 +62,6 @@ div.menuBar a:hover span{
 	background:#FFFFE1;
 	color:black;
 }
-
-div.main{
-	background-color:#FBFBFB;
-}	
-
 
 div.currentProgress{
 	background-color:#F0EEFE;
