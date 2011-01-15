@@ -87,10 +87,19 @@ div.userInput{
 	width:50%;
 }
 
+div.userInput td{
+	vertical-align:top;
+	padding-bottom:1em;
+	max-width:190px;
+}
+
+div.userInput select{
+	font-size:.75em;
+}
+
 div.userInput #button{
 	font-size:75%;
-	margin-left:46%;
-	margin-top:10px;
+	margin-left:40%;
 	margin-bottom:2em;
 }
 
@@ -100,6 +109,12 @@ div.currentProgress{
 	margin-left:15.5%;
 	margin-top:25px;
 	width:320px;
+	padding-bottom:15px;
+}
+
+div.currentProgress h3{
+	margin-top:3px;
+	margin-bottom:20px;
 }
 
 #footer{
