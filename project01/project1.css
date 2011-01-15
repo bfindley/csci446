@@ -4,12 +4,15 @@ body{
 }
 
 div.main{
+	left:50%;
 	background-color:#FBFBFB;
-	margin-left:3%;
-	margin-right:3%;
 	margin-top:-30px;
 	border-style:solid;
 	border-width:1px;
+	max-width:975px;
+	margin-left: auto;
+	margin-right: auto;
+
 }	
 
 div.banner{
@@ -79,6 +82,7 @@ div.menuBar a:hover span{
 }
 
 div.userInput{
+	float:left;
 	margin-left:10px;
 	width:50%;
 }
@@ -87,14 +91,21 @@ div.userInput #button{
 	font-size:75%;
 	margin-left:46%;
 	margin-top:10px;
+	margin-bottom:2em;
 }
 
-
 div.currentProgress{
+	float:left;
 	background-color:#F0EEFE;
+	margin-left:15.5%;
+	margin-top:25px;
+	width:320px;
 }
 
 #footer{
+	font-size:80%;
+	clear: both;
 	background-color:#EFEFEF;
 	text-align:center;
+	padding:.75em;
 }
