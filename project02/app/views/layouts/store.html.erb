@@ -15,7 +15,9 @@
 	<div id="columns">
 		<div id="side">
 			<div id="cart">
-				<%= render(:partial => "cart", :object => @cart) %>
+				<% hidden_div_if(@cart.items.empty?, :id => "cart") do %>
+					<%= render(:partial => "cart", :object => @cart) %>
+				<% end %>
 			</div>
 			<a href="http://www....">Home</a><br />
 			<a href="http://www..../faq">Questions</a><br />
@@ -23,9 +25,7 @@
 			<a href="http://www..../contact">Contact</a><br />
 		</div>
 		<div id="main">
-			<% if flash[:notice] -%>
-				<div id="notice"><%= flash[:notice] %></div>
-			<% end %>
+
 			
 			<%= yield :layout %>
 		</div>
