@@ -1,4 +1,5 @@
 class StoreController < ApplicationController
+	before_filter :find_cart, :except=> :empty_cart
   def index
 	@products = Product.find_products_for_sale
   end
@@ -48,6 +49,7 @@ class StoreController < ApplicationController
 		end
 	end
 	
+	
 	private
 		def redirect_to_index(msg = nil)
 			flash[:notice] = msg if msg
@@ -55,6 +57,10 @@ class StoreController < ApplicationController
 		end
 	
 		def find_cart
-			session[:cart] ||= Cart.new
+			@cart=(session[:cart] || Cart.new)
+		end
+		
+	protected
+		def authorize
 		end
 end

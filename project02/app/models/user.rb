@@ -1,6 +1,7 @@
 require 'digest/sha1'
 
 class User < ActiveRecord::Base
+
 	validates_presence_of :name
 	validates_uniqueness_of :name
 	
@@ -30,6 +31,12 @@ class User < ActiveRecord::Base
 		return if pwd.blank?
 		create_new_salt
 		self.hashed_password = User.encrypted_password(self.password, self.salt)
+	end
+	
+	def after_destroy
+		if User.count.zero?
+			raise "Can't delete last user"
+		end
 	end
 	
 	private
