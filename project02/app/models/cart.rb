@@ -13,6 +13,8 @@ class Cart
 			current_item = CartItem.new(product)
 			@items << current_item
 		end
+		
+	
 		current_item
 	end
 	
