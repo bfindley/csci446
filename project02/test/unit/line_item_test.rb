@@ -1,8 +1,27 @@
 require 'test_helper'
 
-class LineItemTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
-  end
+class CartTest < ActiveSupport::TestCase
+	fixtures :products
+	
+	def setup
+		@cart=Cart.net
+		@rails=products(:rails_book)
+		@ruby=products(:ruby_book)
+	end
+	
+	test "add unique products" do
+		@cart.add_product @rails
+		@cart.add_product @ruby
+		assert_equal 2, @cart.items.size
+		assert_equal @rails.price + @ruby.price, @cart.total_price
+	end
+	
+	test "add_duplicate_product" do
+		@cart.add_product @rails
+		@cart.add_product @rails
+		assert_equal 2*@rails.price, @cart.total_price
+		assert_equal 1, @cart.items.size
+		assert_equal 2, @cart.items[0].quantity
+	end
+	
 end
