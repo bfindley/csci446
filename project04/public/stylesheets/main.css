@@ -1,0 +1,113 @@
+#main  {
+	min-width: 950px;
+	max-width:950px;
+	margin-left: auto;
+	margin-right: auto;
+	  font-family:  "Comic Sans MS";
+}
+
+h1{
+	margin-bottom:0px;
+}
+
+h2 {
+	margin-right:250px;
+	width: 250px;
+	display:inline;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+	color: blue;
+}
+
+
+p {
+	font-size: 80%;
+}
+img {
+	border-style: none;
+
+}
+
+#banner{
+	margin-left: auto;
+	margin-right: auto;
+	max-width:300px;
+}
+
+#article-list {
+	overflow: auto;
+	height: 253px;
+	min-width: 950px;
+	max-width:950px;
+	font-size: 80%;
+}
+
+#article-list table{
+	border-collapse: collapse;
+	margin-top: 20px;
+	border: 1px solid;
+	min-width: 950px;
+	max-width:950px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#article-list td, th{
+	border-left: 1px solid;
+	border-right: 1 px solid;
+	min-width: 100px;
+}
+
+#article-list .list-line-even {
+  background:   #FFFFFF;
+}
+
+#article-list .list-line-odd {
+  background:   #EEEEEE;
+}
+
+#article-list  .header {
+	background: #CCCCCC;
+	text-align: left;
+	border-top: 1px solid;
+}
+
+#article-list .body {
+	min-width:300px;
+	max-width:300px;
+	
+}
+
+#article-list .icons{
+	background: white;
+	border: 1px solid;
+	border-color: white white white black;
+}
+
+#edit-table label{
+	vertical-align:top;
+	display: block;
+	float: left;
+	margin-right: 30px;
+	text-align: right;
+	width:100px;
+}
+
+#edit-table #submit, #create{
+	margin-left:130px;
+}
+
+#edit-table input, textarea {
+	border: 2px solid;
+	margin-bottom:18x;
+}
+
+#edit-actions a{
+	margin-right:70px;
+}
