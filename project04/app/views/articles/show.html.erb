@@ -2,7 +2,7 @@
 	<%= link_to image_tag("arrow_left.png")+"  list all articles", articles_path,:title => "Goes to front page" %>
 	<%= link_to image_tag("report_edit.png")+" edit", edit_article_path(@article),:title => "Edit this article" %>
 	<%= link_to image_tag("delete.png")+" delete", @article, :title => "Deletes article",:confirm => 'Are you sure?', :method => :delete %>
-	<%= link_to image_tag("email.png")+" email", edit_article_path(@article),:title => "Opens email editor" %>
+	<%= mail_to("",image_tag("email.png")+" email",:subject =>@article.title, :body => request.url, :title => "Opens email editor") %>
 </div>
 
 <p>
