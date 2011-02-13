@@ -1,0 +1,7 @@
+= link_to image_tag("arrow_left.png")+"  list all articles", articles_path, { :title => "Goes back to front page" }
+%h1 Creating a New Article
+#edit-table
+  - form_for(@article) do |f|
+    = render :partial => "form", :locals => {:f => f}
+    %p#create
+      = f.submit "Create!" ,:title => "Upload article"
