@@ -1,0 +1,32 @@
+<div id="articles">
+	<h2>All the World's Articles</h2>
+	<span id="add-Article">
+		<%= link_to image_tag("add.png")+"Create an Article", new_article_path,:title => "Create a new article" %>
+	</span>
+	<div id="article-list">
+		<table>
+		  <tr>
+			 <th class="header">Title</th>
+			 <th class="header">Author Name</th>
+			 <th class="header">Body</th>
+			 <th class="header">Creation Date</th>
+			 <th class="icons"> </th>
+		  </tr>
+
+		<% @articles.each do |article| %>
+		 <tr class ="<%= cycle('list-line-odd','list-line-even') %>">
+			 <td><%=h truncate(article.title,25) %></td>
+			 <td><%=h truncate(article.author,25) %></td>
+			 <td  class="body"><%=h truncate(article.body,45,"...") %></td>
+			 <td><%=h article.created_at.to_s(:create_time)  %></td>
+			 <td class="icons">
+				<%= link_to image_tag("magnifier.png"),article,{ :title => "View article" } %>
+				<%= link_to image_tag("report_edit.png"), edit_article_path(article),{ :title => "Edit article" } %>
+				<%= link_to image_tag("delete.png"), article, :title => "Deletes article" , :confirm => "Are you sure?", :method => :delete %>
+			</td>
+		  </tr>
+		<% end %>
+		</table>
+	</div>
+	<p><%= pluralize(@articles.size, "article") %> </p>
+</div>

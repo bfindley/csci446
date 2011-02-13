@@ -1,0 +1,20 @@
+<h1>Listing sayings</h1>
+
+<table>
+  <tr>
+    <th>Quote</th>
+  </tr>
+
+<% @sayings.each do |saying| %>
+  <tr>
+    <td><%=h saying.quote %></td>
+    <td><%= link_to 'Show', saying %></td>
+    <td><%= link_to 'Edit', edit_saying_path(saying) %></td>
+    <td><%= link_to 'Destroy', saying, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New saying', new_saying_path %>

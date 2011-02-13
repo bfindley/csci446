@@ -1,0 +1,24 @@
+<%= link_to image_tag("arrow_left.png")+"  list all articles", articles_path, { :title => "Goes back to front page" }%>
+
+<h1>Creating a New Article</h1>
+<div id="edit-table">
+	<% form_for(@article) do |f| %>
+	  <%= f.error_messages %>
+
+	  <p>
+		 <%= f.label :title %>
+		 <%= f.text_field :title %>
+	  </p>
+	  <p>
+		 <%= f.label :author %>
+		 <%= f.text_field :author %>
+	  </p>
+	  <p>
+		 <%= f.label :body %>
+		 <%= f.text_area :body %>
+	  </p>
+	  <p id="create">
+		 <%= f.submit "Create!" ,:title => "Upload article"%>
+	  </p>
+	<% end %>
+</div>
