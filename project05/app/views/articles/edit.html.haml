@@ -1,0 +1,8 @@
+= link_to image_tag("arrow_left.png")+" back", session[:last_page],:title => "Goes to previous page"
+%h1
+  Editing "#{@article.title}"
+#edit-table
+  - form_for(@article) do |f|
+    = render :partial => "form", :locals => {:f => f}
+    %p#submit
+      = f.submit 'Save Changes' ,:title => "Submit changes"

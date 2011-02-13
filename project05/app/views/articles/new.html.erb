@@ -3,20 +3,7 @@
 <h1>Creating a New Article</h1>
 <div id="edit-table">
 	<% form_for(@article) do |f| %>
-	  <%= f.error_messages %>
-
-	  <p>
-		 <%= f.label :title %>
-		 <%= f.text_field :title %>
-	  </p>
-	  <p>
-		 <%= f.label :author %>
-		 <%= f.text_field :author %>
-	  </p>
-	  <p>
-		 <%= f.label :body %>
-		 <%= f.text_area :body %>
-	  </p>
+		<%= render :partial => "form", :locals => {:f => f} %>
 	  <p id="create">
 		 <%= f.submit "Create!" ,:title => "Upload article"%>
 	  </p>
