@@ -1,0 +1,12 @@
+%h1 Editing saying
+- form_for(@saying) do |f|
+  = f.error_messages
+  %p
+    = f.label :quote
+    %br/
+    = f.text_field :quote
+  %p
+    = f.submit 'Update'
+= link_to 'Show', @saying
+|
+\#{link_to 'Back', sayings_path}

@@ -1,0 +1,13 @@
+!!!
+%html{:lang => "en", "xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:content => "text/html;charset=UTF-8", "http-equiv" => "content-type"}/
+    %title Articl.es -- All the World's Articles (with a name .com hipsters love)
+    = stylesheet_link_tag "main", :media => "all"
+  %body
+    #main
+      #banner
+        %h1 Articl.es
+        = Saying.random_quote
+      %p{:style => "color: green"}= notice
+      = yield

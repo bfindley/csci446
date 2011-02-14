@@ -43,7 +43,6 @@ class ArticlesController < ApplicationController
     @article = Article.new(params[:article])
 
     respond_to do |format|
-		@article.updates=0
       if @article.save
         format.html { redirect_to(@article, :notice => 'Article was successfully created.') }
         format.xml  { render :xml => @article, :status => :created, :location => @article }
@@ -58,7 +57,7 @@ class ArticlesController < ApplicationController
   # PUT /articles/1.xml
   def update
     @article = Article.find(params[:id])
-	 @article.updates=@article.updates+1
+	 
     respond_to do |format|
       if @article.update_attributes(params[:article])
 			

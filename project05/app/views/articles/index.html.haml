@@ -14,14 +14,15 @@
         %tbody
           - @articles.each do |article|
             %tr{:class => cycle('list-line-odd','list-line-even')}
-              %td= h truncate(article.title,25)
-              %td= h truncate(article.author,25)
-              %td.body= h truncate(article.body,45,"...")
+              %td= h truncate(article.title, :length => 25)
+              %td= h truncate(article.author, :length => 25)
+              %td.body= h truncate(article.body, :length => 45)
               %td= h article.created_at.to_s(:create_time)
               %td.icons
-                = link_to image_tag("magnifier.png"),article,{ :title => "View article" }
-                = link_to image_tag("report_edit.png"), edit_article_path(article),{ :title => "Edit article" }
-                = link_to image_tag("delete.png"), article, :title => "Deletes article" , :confirm => "Are you sure?", :method => :delete
+                %ul
+                  %li= link_to image_tag("magnifier.png"), article,{ :title => "View article" }
+                  %li= link_to image_tag("report_edit.png"), edit_article_path(article), { :title => "Edit article" }
+                  %li= link_to image_tag("delete.png"), article, :title => "Deletes article", :confirm => "Are you sure?", :method => :delete
   
   %p
     = pluralize(@articles.size, "article")

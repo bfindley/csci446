@@ -1,6 +1,6 @@
 class AddUpdatesToArticle < ActiveRecord::Migration
   def self.up
-    add_column :articles, :updates, :integer
+    add_column :articles, :updates, :integer, :default => 0
   end
 
   def self.down
