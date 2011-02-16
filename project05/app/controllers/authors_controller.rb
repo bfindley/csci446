@@ -28,7 +28,6 @@ class AuthorsController < ApplicationController
   # GET /authors/new.xml
   def new
     @author = Author.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @author }

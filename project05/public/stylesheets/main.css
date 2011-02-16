@@ -149,4 +149,9 @@ img#avatar {
     padding: 5px; }
   #errorExplanation ul li {
     font-size: 12px;
-    list-style: square; }
+    list-style: square;
+    float: none; }
+
+#work-list {
+  float: none;
+  text-align: center; }

@@ -19,5 +19,3 @@ Article.delete_all
 articles.each do |t|
 	Article.create!(t)
 end
-
-#Article.create!({ :title => "Ender's Game", :updated_at => "2011-02-15 18:16:40", :author_id => 2, :body => "In the novel's opening, " })

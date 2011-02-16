@@ -4,8 +4,8 @@
 	= f.label :title
 	= f.text_field :title
 %p
-	= f.label "Author name"
-	= f.collection_select :author_id, @authors, :id, :author_name
+	= f.label :author_id, "Author name"
+	= f.collection_select :author_id, @authors, :id, :author_name , :prompt => true
 %p
 	= f.label :body
 	= f.text_area :body

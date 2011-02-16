@@ -6,3 +6,7 @@
   %div
     %h2#image-label= h @author.author_name
   = image_tag @author.photo.url(:small), :id => "avatar"
+  %h3#work-list Articles Written:
+  %ul 
+    - @author.grab_author_articles.each do |article|
+      %li#work-list= h article.title

@@ -1,7 +1,7 @@
 class Author < ActiveRecord::Base
 	has_many :article
 
-	validates_presence_of :author_name
+	validates_presence_of :author_name, :photo
 	validates_attachment_presence :photo
 	validates_attachment_size :photo, :less_than => 3.megabytes
 	validates_attachment_content_type :photo, :content_type=> ['image/jpeg', 'image/png', 'image/gif']
@@ -11,6 +11,10 @@ class Author < ActiveRecord::Base
 	
 	def self.display_authors(page)
 		paginate(:per_page => 10, :page=> page)
+	end
+	
+	def grab_author_articles
+		Article.find_all_by_author_id(id)
 	end
 	
 	private
