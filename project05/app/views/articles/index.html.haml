@@ -1,8 +1,11 @@
 #articles
   %h2 All the World's Articles
-  %span#add-Article
-  = link_to image_tag("add.png")+"Create an Article", new_article_path,:title => "Create a new article"
-  #article-list
+  
+  %span#add-Article= link_to image_tag("add.png")+"Create an Article", new_article_path,:title => "Create a new article"
+ 
+  .pagination= will_paginate @articles
+
+  #list
     %table
       %thead
         %tr
@@ -15,7 +18,7 @@
           - @articles.each do |article|
             %tr{:class => cycle('list-line-odd','list-line-even')}
               %td= h truncate(article.title, :length => 25)
-              %td= h truncate(article.author, :length => 25)
+              %td= h truncate(article.author.author_name, :length => 25)
               %td.body= h truncate(article.body, :length => 45)
               %td= h article.created_at.to_s(:create_time)
               %td.icons
@@ -25,4 +28,6 @@
                   %li= link_to image_tag("delete.png"), article, :title => "Deletes article", :confirm => "Are you sure?", :method => :delete
   
   %p
-    = pluralize(@articles.size, "article")
+    = pluralize(@total_articles, "article")
+    
+  .pagination= will_paginate @articles

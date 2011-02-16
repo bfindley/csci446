@@ -6,6 +6,6 @@
 %p
   %h2= h @article.title
   %br/
-  by #{h @article.author}. #{pluralize(@article.updates, "edit")} since #{@article.created_at.to_s(:show_time)}.
+  by #{h @article.author.author_name}. #{pluralize(@article.updates, "edit")} since #{@article.created_at.to_s(:show_time)}.
 %p
   = h simple_format(@article.body)

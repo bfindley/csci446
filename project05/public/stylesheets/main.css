@@ -31,6 +31,11 @@ ul {
   margin: 0;
   padding: 0; }
 
+th {
+  border-left: 1 px solid;
+  border-right: 1 px solid;
+  min-width: 100px; }
+
 li {
   float: left; }
 
@@ -39,13 +44,19 @@ li {
   margin-right: auto;
   max-width: 300px; }
 
-#article-list {
+#menu li {
+  margin: 0px 20px 0px 20px; }
+
+.pagination {
+  text-align: center; }
+
+#list {
   overflow: auto;
   height: 275px;
   min-width: 970px;
   max-width: 970px;
   font-size: 80%; }
-  #article-list table {
+  #list table {
     border-collapse: collapse;
     margin-top: 20px;
     border: 1px solid;
@@ -53,31 +64,40 @@ li {
     max-width: 950px;
     margin-left: auto;
     margin-right: auto; }
-  #article-list td {
+  #list td {
     border-left: 1 px solid;
     border-right: 1 px solid;
     min-width: 100px; }
+  #list .list-line-even {
+    background: white; }
+  #list .list-line-odd {
+    background: #eeeeee; }
+  #list .header {
+    background: #cccccc;
+    text-align: left;
+    border-top: 1 px solid; }
+  #list .body {
+    min-width: 300px;
+    max-width: 300px; }
+  #list .icons {
+    background: white;
+    border: 1px solid;
+    border-color: white white white black; }
+  #list th.header#author-name {
+    min-width: 665px;
+    max-width: 665px; }
 
-th {
-  border-left: 1 px solid;
-  border-right: 1 px solid;
-  min-width: 100px; }
+h2#image-label {
+  text-align: center;
+  display: block;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto; }
 
-#article-list .list-line-even {
-  background: white; }
-#article-list .list-line-odd {
-  background: #eeeeee; }
-#article-list .header {
-  background: #cccccc;
-  text-align: left;
-  border-top: 1 px solid; }
-#article-list .body {
-  min-width: 300px;
-  max-width: 300px; }
-#article-list .icons {
-  background: white;
-  border: 1px solid;
-  border-color: white white white black; }
+img#avatar {
+  margin-right: auto;
+  margin-left: auto;
+  display: block; }
 
 #edit-table label {
   vertical-align: top;
@@ -92,7 +112,7 @@ th {
 #create {
   margin-left: 130px; }
 
-#edit-table input, textarea {
+#edit-table input, textarea, #author_photo {
   border: 2px solid;
   margin-bottom: 18x; }
 

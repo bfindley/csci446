@@ -1,0 +1,6 @@
+= link_to image_tag("arrow_left.png")+"  list all authors", authors_path, { :title => "Goes back to authors list" }
+%h1 New author
+#edit-table
+    - form_for(@author, :html => { :multipart => true } ) do |f|
+        = render :partial => "form", :locals => {:f => f}
+        %p#create= f.submit 'Create'

@@ -9,15 +9,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110205212727) do
+ActiveRecord::Schema.define(:version => 20110215014117) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
-    t.string   "author"
+    t.integer  "author_id"
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "updates"
+    t.integer  "updates",    :default => 0
+  end
+
+  create_table "authors", :force => true do |t|
+    t.string   "author_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "sayings", :force => true do |t|

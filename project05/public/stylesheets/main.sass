@@ -1,5 +1,6 @@
 $window_size: 970px
 $border_style: 1 px solid
+$table_width: 950px
 
 #main
   min-width: $window_size
@@ -34,6 +35,11 @@ ul
   margin: 0
   padding: 0
 
+th
+  border-left: $border_style
+  border-right: $border_style
+  min-width: 100px
+
 li
   float: left
 #banner
@@ -41,7 +47,15 @@ li
   margin-right: auto
   max-width: 300px
 
-#article-list
+#menu
+  li
+    margin: 0px 20px 0px 20px
+  
+
+.pagination
+  text-align: center
+
+#list
   overflow: auto
   height: 275px
   min-width: $window_size
@@ -51,21 +65,15 @@ li
     border-collapse: collapse
     margin-top: 20px
     border: 1px solid
-    min-width: 950px
-    max-width: 950px
+    min-width: $table_width
+    max-width: $table_width
     margin-left: auto
     margin-right: auto
   td
     border-left: $border_style
     border-right: $border_style
     min-width: 100px
-
-th
-  border-left: $border_style
-  border-right: $border_style
-  min-width: 100px
-
-#article-list
+    
   .list-line-even
     background: #FFFFFF
   .list-line-odd
@@ -81,7 +89,23 @@ th
     background: white
     border: 1px solid
     border-color: white white white black
+  th.header#author-name
+    min-width: .7*$table_width
+    max-width: .7*$table_width
 
+h2#image-label
+  text-align: center
+  display: block
+  width: 100%
+  margin-right: auto
+  margin-left: auto
+  
+  
+img#avatar
+  margin-right: auto
+  margin-left: auto
+  display: block
+  
 #edit-table
   label
     vertical-align: top
@@ -96,7 +120,7 @@ th
 #create
   margin-left: 130px
 
-#edit-table input, textarea
+#edit-table input, textarea, #author_photo
   border: 2px solid
   margin-bottom: 18x
 
@@ -135,3 +159,5 @@ th
   ul li
     font-size: 12px
     list-style: square
+
+

@@ -1,9 +1,17 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :authors
+
+  map.resources :authors
+
+  map.resources :authors
+
+  map.resources :authors
+
   map.resources :sayings
 
-  map.resources :funny_quotes
-
   map.resources :articles
+  
+  map.root :controller => "articles"
 
   # The priority is based upon order of creation: first created -> highest priority.
 

@@ -1,8 +1,12 @@
 class ArticlesController < ApplicationController
+  layout "application"
+  
   # GET /articles
   # GET /articles.xml
   def index
-    @articles = Article.all
+    @articles = Article.display_articles(params[:page])
+    @total_articles = Article.count
+    
 	 #session[:last_page] = request.env['HTTP_REFERER'] || articles_path
 
     respond_to do |format|
@@ -25,6 +29,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new.xml
   def new
     @article = Article.new
+    @authors = Author.all
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @article }
@@ -34,6 +39,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
+    @authors = Author.all
 	 session[:last_page] = request.env['HTTP_REFERER'] || articles_path
   end
 
@@ -41,7 +47,7 @@ class ArticlesController < ApplicationController
   # POST /articles.xml
   def create
     @article = Article.new(params[:article])
-
+    @authors = Author.all
     respond_to do |format|
       if @article.save
         format.html { redirect_to(@article, :notice => 'Article was successfully created.') }

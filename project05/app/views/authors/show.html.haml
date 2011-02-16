@@ -1,0 +1,8 @@
+#edit-actions
+  = link_to image_tag("arrow_left.png")+"  list all authors", authors_path,:title => "Goes to authors page"
+  = link_to image_tag("report_edit.png")+" edit", edit_author_path(@author),:title => "Edit this author"
+
+%p
+  %div
+    %h2#image-label= h @author.author_name
+  = image_tag @author.photo.url(:small), :id => "avatar"

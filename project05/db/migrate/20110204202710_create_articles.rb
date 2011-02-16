@@ -2,7 +2,7 @@ class CreateArticles < ActiveRecord::Migration
   def self.up
     create_table :articles do |t|
       t.string :title
-      t.string :author
+      t.integer :author_id
       t.text :body
 
       t.timestamps

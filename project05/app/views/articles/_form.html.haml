@@ -4,9 +4,8 @@
 	= f.label :title
 	= f.text_field :title
 %p
-	= f.label :author
-	= f.text_field :author
-	
+	= f.label "Author name"
+	= f.collection_select :author_id, @authors, :id, :author_name
 %p
 	= f.label :body
 	= f.text_area :body
