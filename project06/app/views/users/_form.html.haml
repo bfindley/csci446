@@ -19,4 +19,7 @@
     = f.label :last_name
     = f.text_field :last_name
   %p
-    = f.submit
+    = f.label "Human check"
+    = recaptcha_tags
+  %p
+    = f.submit "Create account"

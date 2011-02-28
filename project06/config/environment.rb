@@ -14,11 +14,6 @@ Rails::Initializer.run do |config|
   # Add additional load paths for your own custom dirs
   # config.autoload_paths += %W( #{RAILS_ROOT}/extras )
 
-  # Specify gems that this application depends on and have them installed with rake gems:install
-  # config.gem "bj"
-  # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
-  # config.gem "sqlite3-ruby", :lib => "sqlite3"
-  # config.gem "aws-s3", :lib => "aws/s3"
   config.gem "haml"
   config.gem "will_paginate"
   config.gem "paperclip"
@@ -45,4 +40,7 @@ Rails::Initializer.run do |config|
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
+  
+  ENV['RECAPTCHA_PUBLIC_KEY'] = '6Ld-_cESAAAAAEpLaASC72GVUZOkCqoABoCKLWxF'
+  ENV['RECAPTCHA_PRIVATE_KEY'] = '6Ld-_cESAAAAAAmo9enE96-JISTywl9xjJMUgZyz'
 end

@@ -14,4 +14,8 @@
       = link_to "Register", new_user_path 
       | 
       = link_to "Login", login_path
+    
+    = flash.each do |name, msg|
+      = content_tag :div, msg, :id => "flash_#{name}" 
+    
     = yield
