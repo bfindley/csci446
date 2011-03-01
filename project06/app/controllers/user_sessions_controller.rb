@@ -1,4 +1,5 @@
 class UserSessionsController < ApplicationController
+
   def index
     @user_sessions = UserSession.all
   end
@@ -41,4 +42,6 @@ class UserSessionsController < ApplicationController
     flash[:notice] = "Successfully logged out."
     redirect_to root_url
   end
+  
+
 end

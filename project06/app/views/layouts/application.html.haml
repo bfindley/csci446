@@ -5,17 +5,23 @@
   %title Gamez
   = stylesheet_link_tag "main", :media => "all"
   %body
-  #main
-    %h1 Gamez
-    - if current_user
-      = link_to "Edit Profile", edit_user_path(:current)
-      = link_to "Logout", logout_path
-    - else
-      = link_to "Register", new_user_path 
-      | 
-      = link_to "Login", login_path
-    
-    = flash.each do |name, msg|
-      = content_tag :div, msg, :id => "flash_#{name}" 
-    
-    = yield
+    %div.personalBar
+      - if current_user
+        Logged in as 
+        = link_to "#{current_user.first_name} #{current_user.last_name}", edit_user_path(:current)
+        = ", #{current_user.role.name}.&nbsp&nbsp&nbsp"
+        = link_to "Logout", logout_path
+      - else
+        = link_to "Register", new_user_path 
+        | 
+        = link_to "Login", login_path
+  
+    - if flash[:notice]
+      %div.flashNotice
+        = flash[:notice] 
+    - if flash[:error]
+      %div.flashError
+        = flash[:error]
+    #main
+      %h1 Gamez       
+      = yield

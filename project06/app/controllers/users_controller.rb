@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  filter_resource_access
+
   def index
     @users = User.all
   end
@@ -13,18 +15,17 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
-    puts @user
     if verify_recaptcha() and @user.save 
-      flash[:notice] = "Registration successful."
+      flash[:notice] = "Welcome #{@user.first_name} #{@user.last_name}."
       redirect_to root_url
     else
-      #flash[:error] = "Recaptcha failed."
+      flash[:notice] = "Sorry, could not register you."
       render :action => 'new'
     end
   end
-
+  
   def edit
-    @user = User.find(params[:id])
+    @user = User.current_user
   end
 
   def update

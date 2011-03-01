@@ -1,18 +1,17 @@
 %h2 Users
 %table
   %tr
+    %th Name
     %th Username
-    %th Email
-    %th Password
-    %th First name
-    %th Last name
+    %th Last Login
   - for user in @users
     %tr
+      %td= h "#{user.first_name} #{user.last_name}"
       %td= h user.username
-      %td= h user.email
-      %td= h user.password
-      %td= h user.first_name
-      %td= h user.last_name
+      - if(!user.last_login_at.nil?)
+        %td= h time_ago_in_words(user.last_login_at) 
+      - else
+        %td=h "Never"
       %td= link_to 'Show', user
       %td= link_to 'Edit', edit_user_path(user)
       %td= link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete

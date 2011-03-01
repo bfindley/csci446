@@ -1,0 +1,166 @@
+$window_size: 970px
+$border_style: 1 px solid
+$table_width: 950px
+
+#main
+  min-width: $window_size
+  max-width: $window_size
+  margin-left: auto
+  margin-right: auto
+  font-family: "Comic Sans MS"
+
+h1
+  margin-bottom: 0px
+
+h2
+  margin-right: 250px
+  width: 250px
+  display: inline
+
+a
+  text-decoration: none
+  &:visited
+    text-decoration: none
+    color: blue
+
+p
+  font-size: 80%
+
+img
+  border-style: none
+  
+ul
+  overflow: hidden
+  list-style-type: none
+  margin: 0
+  padding: 0
+
+th
+  border-left: $border_style
+  border-right: $border_style
+  min-width: 100px
+
+li
+  float: left
+#banner
+  margin-left: auto
+  margin-right: auto
+  max-width: 300px
+
+#menu
+  li
+    margin: 0px 20px 0px 20px
+  
+
+.pagination
+  text-align: center
+
+#list
+  overflow: auto
+  height: 275px
+  min-width: $window_size
+  max-width: $window_size
+  font-size: 80%
+  table
+    border-collapse: collapse
+    margin-top: 20px
+    border: 1px solid
+    min-width: $table_width
+    max-width: $table_width
+    margin-left: auto
+    margin-right: auto
+  td
+    border-left: $border_style
+    border-right: $border_style
+    min-width: 100px
+    
+  .list-line-even
+    background: #FFFFFF
+  .list-line-odd
+    background: #EEEEEE
+  .header
+    background: #CCCCCC
+    text-align: left
+    border-top: $border_style
+  .body
+    min-width: 300px
+    max-width: 300px
+  .icons
+    background: white
+    border: 1px solid
+    border-color: white white white black
+  th.header#author-name
+    min-width: .7*$table_width
+    max-width: .7*$table_width
+
+h2#image-label
+  text-align: center
+  display: block
+  width: 100%
+  margin-right: auto
+  margin-left: auto
+  
+  
+img#avatar
+  margin-right: auto
+  margin-left: auto
+  display: block
+  
+#edit-table
+  label
+    vertical-align: top
+    display: block
+    float: left
+    margin-right: 30px
+    text-align: right
+    width: 100px
+  #submit
+    margin-left: 130px
+
+#create
+  margin-left: 130px
+
+#edit-table input, textarea, #author_photo
+  border: 2px solid
+  margin-bottom: 18x
+
+#edit-actions a
+  margin-right: 70px
+
+/* The error box
+
+.fieldWithErrors
+  padding: 2px
+  background-color: #EEFFEE
+  display: inline
+  *
+    background-color: #CC0000
+
+#errorExplanation
+  width: 400px
+  border: 2px solid red
+  padding: 7px
+  float: right
+  padding-bottom: 12px
+  margin-bottom: 20px
+  background-color: #f0f0f0
+  h2
+    text-align: left
+    font-weight: bold
+    padding: 5px 5px 5px 15px
+    font-size: 12px
+    margin: -7px
+    background-color: #c00
+    color: #fff
+  p
+    color: #333
+    margin-bottom: 0
+    padding: 5px
+  ul li
+    font-size: 12px
+    list-style: square
+    float: none
+
+#work-list
+  float: none
+  text-align: center
