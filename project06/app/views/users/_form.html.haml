@@ -1,5 +1,8 @@
-- form_for @user do |f|
+- form_for @user, :multipart => true do |f|
   = f.error_messages
+  - if(request.path_parameters[:action]=="edit")
+    %p
+    = image_tag @user.photo.url
   %p
     = f.label :username
     = f.text_field :username
@@ -19,7 +22,11 @@
     = f.label :last_name
     = f.text_field :last_name
   %p
-    = f.label "Human check"
-    = recaptcha_tags
+    = f.label :photo
+    = f.file_field :photo
+  - if(request.path_parameters[:action]=="new")
+    %p
+      = f.label "Human check"
+      = recaptcha_tags
   %p
     = f.submit "Create account"

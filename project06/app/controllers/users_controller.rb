@@ -6,7 +6,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
   end
 
   def new
@@ -25,11 +24,9 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @user = User.current_user
   end
 
   def update
-    @user = current_user
     if @user.update_attributes(params[:user])
       flash[:notice] = "Successfully updated profile."
       redirect_to root_url
@@ -39,7 +36,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = current_user
     @user.destroy
     flash[:notice] = "Successfully removed account"
     redirect_to root_url

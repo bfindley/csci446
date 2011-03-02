@@ -1,12 +1,11 @@
 %p
+  = image_tag @user.photo.url
+%p
   %strong Username:
   =h @user.username
 %p
   %strong Email:
   =h @user.email
-%p
-  %strong Password:
-  =h @user.password
 %p
   %strong First Name:
   =h @user.first_name
