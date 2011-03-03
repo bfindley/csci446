@@ -8,7 +8,7 @@
     %div.personalBar
       - if current_user
         Logged in as 
-        = link_to "#{current_user.first_name} #{current_user.last_name}", edit_user_path(:current)
+        = link_to "#{current_user.first_name} #{current_user.last_name}", edit_user_path(current_user)
         = ", #{current_user.role.name}.&nbsp&nbsp&nbsp"
         = link_to "Logout", logout_path
       - else

@@ -13,7 +13,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params[:user])
     if verify_recaptcha() and @user.save 
       flash[:notice] = "Welcome #{@user.first_name} #{@user.last_name}."
       redirect_to root_url
@@ -27,6 +26,8 @@ class UsersController < ApplicationController
   end
 
   def update
+    puts "**********************"
+    puts params[:user]
     if @user.update_attributes(params[:user])
       flash[:notice] = "Successfully updated profile."
       redirect_to root_url
@@ -40,4 +41,5 @@ class UsersController < ApplicationController
     flash[:notice] = "Successfully removed account"
     redirect_to root_url
   end
+  
 end

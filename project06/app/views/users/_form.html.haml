@@ -2,7 +2,7 @@
   = f.error_messages
   - if(request.path_parameters[:action]=="edit")
     %p
-    = image_tag @user.photo.url
+      = image_tag @user.photo.url
   %p
     = f.label :username
     = f.text_field :username
@@ -28,5 +28,9 @@
     %p
       = f.label "Human check"
       = recaptcha_tags
+  - if permitted_to? :destroy, @user
+    %p 
+      = f.label "Role"
+      = f.collection_select(:role_id, Role.all, :id, :name,{:selected => @user.role_id})
   %p
-    = f.submit "Create account"
+    = f.submit "Submit"
