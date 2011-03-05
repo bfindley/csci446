@@ -13,12 +13,13 @@ class UsersController < ApplicationController
   end
 
   def create
+    @user.role_id=2
     if verify_recaptcha() and @user.save 
       flash[:notice] = "Welcome #{@user.first_name} #{@user.last_name}."
       redirect_to root_url
     else
-      flash[:notice] = "Sorry, could not register you."
-      render :action => 'new'
+      flash[:error] = "Sorry, could not register you."
+      redirect_to :controller => "users", :action => 'new'
     end
   end
   
@@ -26,8 +27,6 @@ class UsersController < ApplicationController
   end
 
   def update
-    puts "**********************"
-    puts params[:user]
     if @user.update_attributes(params[:user])
       flash[:notice] = "Successfully updated profile."
       redirect_to root_url

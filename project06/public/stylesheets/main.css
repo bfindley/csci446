@@ -1,21 +1,35 @@
+body {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: "Comic Sans MS"; 
+}
+
+#main {
+  min-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* The error box */
 .fieldWithErrors {
   padding: 2px;
   background-color: #eeffee;
   display: inline; }
   .fieldWithErrors * {
-    background-color: #cc0000; }
+    background-color: #FFCCCC; }
 
 #errorExplanation {
-  width: 400px;
+  width: 300px;
+  display: block;
   border: 2px solid red;
   padding: 7px;
-  float: right;
   padding-bottom: 12px;
   margin-bottom: 20px;
+  text-align: left;
+  float: right;
   background-color: #f0f0f0; }
   #errorExplanation h2 {
-    text-align: left;
     font-weight: bold;
     padding: 5px 5px 5px 15px;
     font-size: 12px;
@@ -39,19 +53,7 @@
 /*
 Project 6 specifically created css after here --->
 */
-body {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  font-family: "Comic Sans MS"; 
-}
 
-#main {
-  min-width: 600px;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .flashError {
   margin-left: auto;
@@ -80,4 +82,27 @@ body {
   text-align: right;
   margin-right: 20px;
   margin-bottom: 5px;
+}
+
+.adminBar ul{
+  list-style-type: none;
+  overflow: hidden;
+  border: 2px solid black;
+  margin: 0;
+  padding: 0;
+}
+
+.adminBar li {
+  float: left;
+  padding: 5px 30px 5px 30px;
+}
+
+.adminBar a:link {
+  text-decoration: none;
+  color: black;
+}
+
+.adminBar a:visited {
+  text-decoration: none;
+  color: black;
 }
