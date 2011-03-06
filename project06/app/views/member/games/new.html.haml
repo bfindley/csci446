@@ -1,0 +1,24 @@
+%h2 New Review
+
+- form_for @game, :url => { :action => "create" } do |f|
+  = f.error_messages
+  %p
+    = f.label :title
+    = f.text_field :title
+  %p
+    = f.label "Rating"
+    #radioButtons
+      %p
+        = f.radio_button :rating, "0"
+        = f.label "Amazing"
+      %p
+        = f.radio_button :rating, "1"
+        = f.label "Good"
+      %p
+        = f.radio_button :rating, "2"
+        = f.label "Meh."
+      %p
+        = f.radio_button :rating, "3"
+        = f.label "Horrible"
+  %p
+    = f.submit

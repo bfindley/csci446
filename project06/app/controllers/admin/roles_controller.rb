@@ -17,7 +17,7 @@ class Admin::RolesController < Admin::AdminController
     @role = Role.new(params[:role])
     if @role.save
       flash[:notice] = "Successfully created role."
-      redirect_to @role
+      redirect_to admin_roles_path
     else
       render :action => 'new'
     end
@@ -29,7 +29,7 @@ class Admin::RolesController < Admin::AdminController
   def update
     if @role.update_attributes(params[:role])
       flash[:notice] = "Successfully updated role."
-      redirect_to @role
+      redirect_to admin_roles_path
     else
       render :action => 'edit'
     end
@@ -38,6 +38,6 @@ class Admin::RolesController < Admin::AdminController
   def destroy
     @role.destroy
     flash[:notice] = "Successfully destroyed role."
-    redirect_to roles_url
+    redirect_to admin_roles_url
   end
 end

@@ -1,5 +1,6 @@
 class Member::UsersController < Member::MemberController
   filter_resource_access
+  layout "member"
   def show
   end
   

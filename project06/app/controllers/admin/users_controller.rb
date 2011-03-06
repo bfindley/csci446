@@ -16,7 +16,7 @@ class Admin::UsersController < Admin::AdminController
     @last_role = @user.role_id
     if @user.update_attributes(params[:user])
       Role.update_counter(@last_role, @user.role_id)
-      redirect_to admin_root_url, :notice => "Successfully updated profile."
+      redirect_to admin_users_url, :notice => "Successfully updated profile."
     else
       flash[:error] = "Failed to update profile."
       render :action => "edit"
@@ -26,7 +26,7 @@ class Admin::UsersController < Admin::AdminController
   def destroy
     @user.destroy
     flash[:notice] = "Successfully removed account"
-    redirect_to admin_root_url
+    redirect_to admin_users_url
   end
   
 end

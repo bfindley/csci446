@@ -1,6 +1,6 @@
 class UserSessionsController < ApplicationController
   filter_resource_access
-
+  layout "public"
   def new
     @user_session = UserSession.new
   end

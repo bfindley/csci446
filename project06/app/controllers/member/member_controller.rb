@@ -1,8 +1,8 @@
 class Member::MemberController < ApplicationController
   filter_access_to :all
-  
+  layout "member"
   def index
-  
+    @games = Game.display_my_games(params[:page],current_user.id)
   end
   
   protected

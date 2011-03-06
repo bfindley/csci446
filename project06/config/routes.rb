@@ -1,20 +1,23 @@
 ActionController::Routing::Routes.draw do |map|
-  map.root :controller => "user_sessions", :action => "new"
+  map.root :controller => "games", :action => "index"
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
   
   map.resources :user_sessions, :only => [:new, :create, :destroy]
   map.resources :users
   
+  map.resources :games
+  
   map.namespace :admin do |admin|
     admin.resources :roles
     admin.resources :users
+    admin.resources :games
     admin.root :controller => 'admin', :action => "index"
   end
   
   map.namespace :member do |member|
-    member.resources :roles
     member.resources :users
+    member.resources :games
     member.root :controller => 'member', :action => "index"
   end
   

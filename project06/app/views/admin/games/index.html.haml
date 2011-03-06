@@ -1,5 +1,5 @@
-%h2 My Gamez
-= link_to "Add a game", new_member_game_path
+%h2= pluralize(@total_games, "Total Game")
+= link_to "Add a game", new_admin_game_path
 %table.userSpecifiedTable#centerdTable
   %tr.rowHeaders
     %th.userTableElem Title
@@ -8,8 +8,8 @@
   = will_paginate @games
   - for game in @games
     %tr{:class => cycle('list-line-odd','list-line-even')}
-      %td.userTableElem= link_to game.title, edit_member_game_path(game)
+      %td.userTableElem= link_to game.title, edit_admin_game_path(game)
       %td.userTableElem=h game.get_rating
       %td.userTableElem
         =h "#{game.created_at.strftime("%b %d, %Y")} by "
-        = link_to "me", edit_member_user_path(current_user)
+        = link_to game.get_creator(current_user.id), edit_admin_user_path(current_user)

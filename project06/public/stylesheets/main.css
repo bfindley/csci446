@@ -130,14 +130,10 @@ table#centerdTable {
   margin-left: auto;
   margin-right: auto; }
 
-td, th {
+td.userTableElem, th.userTableElem {
   border-left: 1px solid black;
   border-right: 1px solid black;
   min-width: 175px; }
-
-#userOptions {
-  min-width: 15px;
-  max-width: 15px; }
 
 .pagination {
   text-align: center; }
@@ -145,6 +141,12 @@ td, th {
 a:link, a:visited {
   color: blue; }
 
-table {
+table.userSpecifiedTable {
   border: 2px solid black;
   border-collapse: collapse; }
+
+#userOptions {
+  min-width: 15px;
+  max-width: 15px; }
+  #userOptions a img {
+    border: 0 none; }

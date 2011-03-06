@@ -9,7 +9,10 @@ class ApplicationController < ActionController::Base
     def set_current_user
       Authorization.current_user = current_user 
     end
- 
+    def permission_denied
+      flash[:error] = "You do not have access to #{request.path}."
+      redirect_to root_url
+    end
   private 
     def current_user_session
       return @current_user_session ||= UserSession.find

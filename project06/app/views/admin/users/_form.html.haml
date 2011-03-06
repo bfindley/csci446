@@ -26,6 +26,6 @@
   -if(current_user.id != @user.id)
     %p 
       = f.label "Role"
-      = f.select :role_id, options_for_select([["admin", 1], ["member",2]], {:selected => @user.role_id})
+      = f.collection_select :role_id, Role.all, :id, :name
   %p
     #userSubmit= f.submit "Save Changes"

@@ -1,8 +1,7 @@
-- form_for @role do |f|
+- form_for @role, :url => { :action => "update" } do |f|
   = f.error_messages
   %p
     = f.label :name
-    %br
     = f.text_field :name
   %p
     = f.submit

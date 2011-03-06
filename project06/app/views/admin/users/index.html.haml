@@ -1,18 +1,20 @@
 %h2 Users
-%table#centerdTable
+%table.userSpecifiedTable#centerdTable
   %tr.rowHeaders
-    %th Name
-    %th Username
-    %th Last Login
-    %th#userOptions
+    %th.userTableElem Name
+    %th.userTableElem Username
+    %th.userTableElem Last Login
+    %th.userTableElem Number of Games
+    %th.userTableElem#userOptions
   = will_paginate @users
   - for user in @users
     %tr{:class => cycle('list-line-odd','list-line-even')}
-      %td= link_to "#{user.first_name} #{user.last_name}", edit_admin_user_path(user)
-      %td= h user.username
+      %td.userTableElem= link_to "#{user.first_name} #{user.last_name}", edit_admin_user_path(user)
+      %td.userTableElem= h user.username
       - if(!user.last_login_at.nil?)
-        %td= h time_ago_in_words(user.last_login_at) 
+        %td.userTableElem= h time_ago_in_words(user.last_login_at) 
       - else
-        %td=h "Never"
-      %td#userOptions= link_to image_tag("delete.png"), user, :title => "Deletes user", :confirm => "Are you sure?", :method => :delete
+        %td.userTableElem=h "Never"
+      %td.userTableElem= user.games_count
+      %td.userTableElem#userOptions= link_to image_tag("delete.png"), user, :title => "Deletes user", :confirm => "Are you sure?", :method => :delete
 

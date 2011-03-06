@@ -1,0 +1,23 @@
+!!!
+%html{:lang => "en", "xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+  %meta{:content => "text/html;charset=UTF-8", "http-equiv" => "content-type"}/
+  %title Gamez
+  = stylesheet_link_tag "main", :media => "all"
+  %body
+    %div.personalBar
+      Logged in as 
+      = link_to "#{current_user.get_full_name}", edit_member_user_path(current_user)
+      = ", #{current_user.role.name}. "
+      = link_to "My Gamez", member_root_path
+      = link_to "Logout", logout_path
+  
+    - if flash[:notice]
+      %div.flashNotice
+        = flash[:notice] 
+    - if flash[:error]
+      %div.flashError
+        = flash[:error]
+    #main
+      %h1= link_to "Gamez", member_games_path 
+      = yield

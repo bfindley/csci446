@@ -7,6 +7,5 @@ class Role < ActiveRecord::Base
       decrement_counter(:users_count, old_role)
       increment_counter(:users_count, new_role)
     end
-  
   end
 end

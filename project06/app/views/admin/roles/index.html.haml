@@ -1,12 +1,11 @@
 %h2 Roles
 
-%table
-  %tr
-    %th Name
-    %th Number of Users
+%table.userSpecifiedTable
+  %tr.rowHeaders
+    %th.userTableElem Name
+    %th.userTableElem Number of Users
   - for role in @roles
     %tr{:class => cycle('list-line-odd','list-line-even')}
-      %td= h role.name
-      %td= role.users_count
+      %td.userTableElem= link_to role.name, edit_admin_role_path(role)
+      %td.userTableElem= role.users_count
 
-%p= link_to "New Role", new_admin_role_path

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   filter_resource_access
-
+  layout "public"
   def new
     @user = User.new(params["user"])
   end

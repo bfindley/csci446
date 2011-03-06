@@ -6,16 +6,9 @@
   = stylesheet_link_tag "main", :media => "all"
   %body
     %div.personalBar
-      - if current_user
-        Logged in as 
-        = link_to "#{current_user.get_full_name}", edit_member_user_path(current_user)
-        = ", #{current_user.role.name}. "
-        = link_to "Home", member_root_path
-        = link_to "Logout", logout_path
-      - else
-        = link_to "Register", new_user_path 
-        | 
-        = link_to "Login", login_path
+      = link_to "Register", new_user_path 
+      | 
+      = link_to "Login", login_path
   
     - if flash[:notice]
       %div.flashNotice
@@ -24,5 +17,6 @@
       %div.flashError
         = flash[:error]
     #main
-      %h1 Gamez 
+      %h1 
+        = link_to "Gamez", games_path 
       = yield
