@@ -1,5 +1,7 @@
-- form_for @user, :html => { :multipart => true } do |f|
+- form_for @user, :url => { :action => "update" }, :html => { :multipart => true } do |f|
   = f.error_messages
+  %p
+    = image_tag @user.photo.url, :height => 100
   %p
     = f.label :username
     = f.text_field :username
@@ -21,8 +23,9 @@
   %p
     = f.label :photo
     = f.file_field :photo
+  -if(current_user.id != @user.id)
+    %p 
+      = f.label "Role"
+      = f.select :role_id, options_for_select([["admin", 1], ["member",2]], {:selected => @user.role_id})
   %p
-    = f.label "Human check"
-    = recaptcha_tags
-  %p
-    #userSubmit= "Submit"
+    #userSubmit= f.submit "Save Changes"

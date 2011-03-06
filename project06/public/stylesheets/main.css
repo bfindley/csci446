@@ -1,15 +1,19 @@
 body {
   margin-left: auto;
   margin-right: auto;
-  text-align: center;
-  font-family: "Comic Sans MS"; 
-}
+  font-family: "Comic Sans MS"; }
 
 #main {
-  min-width: 600px;
+  min-width: 800px;
+  max-width: 800px;
   margin-left: auto;
-  margin-right: auto;
-}
+  margin-right: auto; }
+
+h1 {
+  text-align: center; }
+
+#loginPage {
+  text-align: center; }
 
 /* The error box */
 .fieldWithErrors {
@@ -17,7 +21,7 @@ body {
   background-color: #eeffee;
   display: inline; }
   .fieldWithErrors * {
-    background-color: #FFCCCC; }
+    background-color: #ffcccc; }
 
 #errorExplanation {
   width: 300px;
@@ -49,60 +53,98 @@ body {
   float: none;
   text-align: center; }
 
-
-/*
-Project 6 specifically created css after here --->
-*/
-
-
 .flashError {
   margin-left: auto;
   margin-right: auto;
-  background-color: #FFCCCC;
-  border: 1px solid red; 
+  background-color: #ffcccc;
+  border: 1px solid red;
   width: 600px;
   text-align: center;
   font-weight: bold;
-  padding: 5px;
-}
+  padding: 5px; }
 
 .flashNotice {
   margin-left: auto;
   margin-right: auto;
-  background-color: #CCFFCC;
-  border: 1px solid green; 
+  background-color: #ccffcc;
+  border: 1px solid green;
   width: 600px;
   text-align: center;
   font-weight: bold;
-  padding: 5px;
-}
+  padding: 5px; }
 
 .personalBar {
   display: block;
   text-align: right;
   margin-right: 20px;
-  margin-bottom: 5px;
-}
+  margin-bottom: 5px; }
 
-.adminBar ul{
-  list-style-type: none;
-  overflow: hidden;
-  border: 2px solid black;
-  margin: 0;
-  padding: 0;
-}
+.adminBar {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto; }
+  .adminBar ul {
+    list-style-type: none;
+    overflow: hidden;
+    border: 2px solid black;
+    margin: 0;
+    padding: 0; }
+  .adminBar li {
+    float: left; }
+    .adminBar li:hover {
+      background: #e0e0e0; }
+  .adminBar a {
+    padding: 20px 30px 20px 30px; }
+    .adminBar a:link, .adminBar a:visited {
+      text-decoration: none;
+      color: black; }
 
-.adminBar li {
+.editForm {
   float: left;
-  padding: 5px 30px 5px 30px;
-}
+  text-align: left;
+  min-width: 800px; }
+  .editForm p {
+    margin: 5px; }
+  .editForm label {
+    width: 100px;
+    display: inline-block; }
+  .editForm img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block; }
+  .editForm #userSubmit {
+    margin-top: 10px;
+    margin-left: 110px; }
 
-.adminBar a:link {
-  text-decoration: none;
-  color: black;
-}
+.list-line-even {
+  background: white; }
 
-.adminBar a:visited {
-  text-decoration: none;
-  color: black;
-}
+.list-line-odd {
+  background: #eeeeee; }
+
+.rowHeaders {
+  background: #cccccc; }
+
+table#centerdTable {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto; }
+
+td, th {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  min-width: 175px; }
+
+#userOptions {
+  min-width: 15px;
+  max-width: 15px; }
+
+.pagination {
+  text-align: center; }
+
+a:link, a:visited {
+  color: blue; }
+
+table {
+  border: 2px solid black;
+  border-collapse: collapse; }

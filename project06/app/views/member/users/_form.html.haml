@@ -1,8 +1,11 @@
-- form_for @user, :html => { :multipart => true } do |f|
+- form_for @user, :url => { :action => "update" }, :html => { :multipart => true } do |f|
   = f.error_messages
+  - if(request.path_parameters[:action]=="edit")
+    %p
+      = image_tag @user.photo.url, :height => 100
   %p
     = f.label :username
-    = f.text_field :username
+    = f.text_field :username, :disabled => "true"
   %p
     = f.label :email
     = f.text_field :email
@@ -21,8 +24,9 @@
   %p
     = f.label :photo
     = f.file_field :photo
+  - if(request.path_parameters[:action]=="new")
+    %p
+      = f.label "Human check"
+      = recaptcha_tags
   %p
-    = f.label "Human check"
-    = recaptcha_tags
-  %p
-    #userSubmit= "Submit"
+    #userSubmit= "Save Changes"

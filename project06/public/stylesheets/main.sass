@@ -1,159 +1,50 @@
-$window_size: 970px
-$border_style: 1 px solid
-$table_width: 950px
-
-#main
-  min-width: $window_size
-  max-width: $window_size
+$page-min-width: 800px
+$page-max-width: 800px
+body
   margin-left: auto
   margin-right: auto
   font-family: "Comic Sans MS"
 
+#main
+  min-width: $page-min-width
+  max-width: $page-max-width
+  margin-left: auto
+  margin-right: auto
+  
 h1
-  margin-bottom: 0px
-
-h2
-  margin-right: 250px
-  width: 250px
-  display: inline
-
-a
-  text-decoration: none
-  &:visited
-    text-decoration: none
-    color: blue
-
-p
-  font-size: 80%
-
-img
-  border-style: none
-  
-ul
-  overflow: hidden
-  list-style-type: none
-  margin: 0
-  padding: 0
-
-th
-  border-left: $border_style
-  border-right: $border_style
-  min-width: 100px
-
-li
-  float: left
-#banner
-  margin-left: auto
-  margin-right: auto
-  max-width: 300px
-
-#menu
-  li
-    margin: 0px 20px 0px 20px
-  
-
-.pagination
   text-align: center
 
-#list
-  overflow: auto
-  height: 275px
-  min-width: $window_size
-  max-width: $window_size
-  font-size: 80%
-  table
-    border-collapse: collapse
-    margin-top: 20px
-    border: 1px solid
-    min-width: $table_width
-    max-width: $table_width
-    margin-left: auto
-    margin-right: auto
-  td
-    border-left: $border_style
-    border-right: $border_style
-    min-width: 100px
-    
-  .list-line-even
-    background: #FFFFFF
-  .list-line-odd
-    background: #EEEEEE
-  .header
-    background: #CCCCCC
-    text-align: left
-    border-top: $border_style
-  .body
-    min-width: 300px
-    max-width: 300px
-  .icons
-    background: white
-    border: 1px solid
-    border-color: white white white black
-  th.header#author-name
-    min-width: .7*$table_width
-    max-width: .7*$table_width
-
-h2#image-label
+#loginPage
   text-align: center
-  display: block
-  width: 100%
-  margin-right: auto
-  margin-left: auto
-  
-  
-img#avatar
-  margin-right: auto
-  margin-left: auto
-  display: block
-  
-#edit-table
-  label
-    vertical-align: top
-    display: block
-    float: left
-    margin-right: 30px
-    text-align: right
-    width: 100px
-  #submit
-    margin-left: 130px
-
-#create
-  margin-left: 130px
-
-#edit-table input, textarea, #author_photo
-  border: 2px solid
-  margin-bottom: 18x
-
-#edit-actions a
-  margin-right: 70px
 
 /* The error box
 
 .fieldWithErrors
   padding: 2px
-  background-color: #EEFFEE
+  background-color: #eeffee
   display: inline
   *
-    background-color: #CC0000
+    background-color: #FFCCCC
 
 #errorExplanation
-  width: 400px
+  width: 300px
+  display: block
   border: 2px solid red
   padding: 7px
-  float: right
   padding-bottom: 12px
   margin-bottom: 20px
+  text-align: left
+  float: right
   background-color: #f0f0f0
   h2
-    text-align: left
     font-weight: bold
     padding: 5px 5px 5px 15px
     font-size: 12px
     margin: -7px
-    background-color: #c00
-    color: #fff
+    background-color: #cc0000
+    color: white
   p
-    color: #333
+    color: #333333
     margin-bottom: 0
     padding: 5px
   ul li
@@ -164,3 +55,95 @@ img#avatar
 #work-list
   float: none
   text-align: center
+
+.flashError
+  margin-left: auto
+  margin-right: auto
+  background-color: #FFCCCC
+  border: 1px solid red
+  width: 600px
+  text-align: center
+  font-weight: bold
+  padding: 5px
+
+.flashNotice
+  margin-left: auto
+  margin-right: auto
+  background-color: #CCFFCC
+  border: 1px solid green
+  width: 600px
+  text-align: center
+  font-weight: bold
+  padding: 5px
+
+.personalBar
+  display: block
+  text-align: right
+  margin-right: 20px
+  margin-bottom: 5px
+
+.adminBar
+  max-width: $page-min-width
+  margin-left: auto
+  margin-right: auto
+  ul
+    list-style-type: none
+    overflow: hidden
+    border: 2px solid black
+    margin: 0
+    padding: 0
+  li
+    float: left
+    &:hover
+      background: #E0E0E0
+  a
+    padding: 20px 30px 20px 30px
+    &:link, &:visited
+      text-decoration: none
+      color: black
+
+.editForm
+  float: left
+  text-align: left
+  min-width: $page-min-width
+  p
+    margin: 5px
+  label
+    width: 100px
+    display: inline-block
+  img
+    margin-left: auto
+    margin-right: auto
+    display: block
+  #userSubmit
+    margin-top: 10px
+    margin-left: 110px
+    
+.list-line-even
+  background: #FFFFFF
+.list-line-odd
+  background: #EEEEEE
+.rowHeaders
+  background: #CCCCCC
+table#centerdTable
+  max-width: $page-max-width
+  margin-left: auto
+  margin-right: auto
+td,th
+  border-left: 1px solid black
+  border-right: 1px solid black
+  min-width: 175px
+#userOptions
+  min-width: 15px
+  max-width: 15px
+
+.pagination
+  text-align: center
+  
+a
+  &:link, &:visited
+    color: blue
+    
+table
+  border: 2px solid black
+  border-collapse: collapse

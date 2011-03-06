@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(:version => 20110304012036) do
     t.string   "last_name"
     t.datetime "current_login_at"
     t.datetime "last_login_at"
-    t.integer  "role_id"
+    t.integer  "role_id",            :default => 2
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "photo_file_name"

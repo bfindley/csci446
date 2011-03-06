@@ -10,7 +10,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :last_name
       t.datetime :current_login_at
       t.datetime :last_login_at
-      t.integer :role_id
+      t.integer :role_id, :default => 2
       t.timestamps
     end
   end

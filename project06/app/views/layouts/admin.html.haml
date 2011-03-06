@@ -2,21 +2,16 @@
 %html{:lang => "en", "xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
   %head
   %meta{:content => "text/html;charset=UTF-8", "http-equiv" => "content-type"}/
-  %title Gamez
+  %title Gamezasdf
   = stylesheet_link_tag "main", :media => "all"
   %body
     %div.personalBar
       - if current_user
         Logged in as 
-        = link_to "#{current_user.get_full_name}", edit_member_user_path(current_user)
-        = ", #{current_user.role.name}. "
-        = link_to "Home", member_root_path
-        = link_to "Logout", logout_path
-      - else
-        = link_to "Register", new_user_path 
-        | 
-        = link_to "Login", login_path
-  
+        = link_to "#{current_user.get_full_name}", edit_admin_user_path(current_user)
+        = ", #{current_user.role.name}."
+        = link_to "Admin", admin_root_path  
+        = link_to "Logout", logout_path  
     - if flash[:notice]
       %div.flashNotice
         = flash[:notice] 
@@ -25,4 +20,8 @@
         = flash[:error]
     #main
       %h1 Gamez 
+      %div.adminBar
+        %ul
+          %li= link_to "Users", admin_users_path
+          %li= link_to "Roles", admin_roles_path
       = yield
