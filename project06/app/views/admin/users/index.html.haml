@@ -16,5 +16,5 @@
       - else
         %td.userTableElem=h "Never"
       %td.userTableElem= user.games_count
-      %td.userTableElem#userOptions= link_to image_tag("delete.png"), user, :title => "Deletes user", :confirm => "Are you sure?", :method => :delete
+      %td.userTableElem#userOptions= link_to image_tag("delete.png"),admin_user_path(user), :title => "Deletes user", :confirm => "Are you sure?", :method => :delete
 
